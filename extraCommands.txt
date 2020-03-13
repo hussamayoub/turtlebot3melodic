@@ -1,0 +1,7 @@
+sudo apt-get install ros-melodic-hector-mapping
+sudo apt-get install ros-melodic-amcl
+sudo apt-get install ros-melodic-map-server
+sudo apt-get install ros-melodic-move-base
+sudo apt-get install ros-melodic-rosserial-python 
+sudo apt-get install ros-melodic-hls-lfcd-lds-driver
+sudo apt-get install ros-melodic-serial
