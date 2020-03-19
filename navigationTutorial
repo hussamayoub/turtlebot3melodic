@@ -23,18 +23,22 @@ echo "source devel/setup.sh" >> ~/.bashrc
 echo "export TURTLEBOT3_MODEL=waffle" >> ~/.bashrc
 
 -- In an new terminal tab, launch Gazebo
-
+  -- If you're on a harddisk from Marian, type rosboot first
+  
 roslaunch turtlebot3_gazebo turtlebot3_house.launch
 
 -- In an new terminal tab, launch RVIZ
+ -- If you're on a harddisk from Marian, type rosboot first
 
 roslaunch turtlebot3_gazebo turtlebot3_gazebo_rviz.launch
 
 -- In an new terminal tab, launch Gmapping
+ -- If you're on a harddisk from Marian, type rosboot first
 
 roslaunch turtlebot3_slam turtlebot3_gmapping.launch
 
 -- In an new terminal tab, launch navigation
+ -- If you're on a harddisk from Marian, type rosboot first
 
 roslaunch turtlebot3_navigation move_base.launch
 
