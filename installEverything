@@ -1,16 +1,22 @@
 #!/usr/bin/env bash
-
+#Install Planning, mapping and navigation dependencies
 sudo apt-get install ros-melodic-hector-mapping ros-melodic-amcl ros-melodic-map-server ros-melodic-move-base  ros-melodic-rosserial-python ros-melodic-hls-lfcd-lds-driver ros-melodic-serial ros-melodic-dwa-local-planner
-cd ~/catkin_ws/
+#make a catkin workspace, and build it
+cd ~ 
+mkdir turtlekin_ws
+cd ~/turtlekin_ws/
+mkdir src
+#clone and copy the turtlebot simulation files
 git clone https://github.com/hussamayoub/turtlebot3melodic.git
 cp -r turtlebot3melodic/turtle* src/
 rm -rf turtlebot3melodic/
+#build the catkin workspace
 catkin_make
-
+#set ROS setting, and source properly
  export ROS_MASTER_URI='http://localhost:11311'
  export ROS_IP=0.0.0.0
  source /opt/ros/melodic/setup.bash
- source /home/ros/catkin_ws/devel/setup.bash
-
+ source ~/turtlekin_ws/devel/setup.bash
+#Launch the maze
 
 roslaunch turtlebot3_gazebo turtlebot3_maze.launch
