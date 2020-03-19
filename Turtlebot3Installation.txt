@@ -1,0 +1,25 @@
+cd ~/catkin_ws/
+
+git clone https://github.com/hussamayoub/turtlebot3melodic.git
+
+cp -r turtlebot3melodic/* src/
+
+catkin_make
+
+-- (gazebo)
+source devel/setup.sh
+export TURTLEBOT3_MODEL=waffle
+roslaunch turtlebot3_gazebo turtlebot3_house.launch
+
+--new tab (rviz visualization)
+source devel/setup.sh
+export TURTLEBOT3_MODEL=waffle
+roslaunch turtlebot3_gazebo turtlebot3_gazebo_rviz.launch
+
+--new tab (mapping)
+source devel/setup.sh
+roslaunch turtlebot3_slam turtlebot3_gmapping.launch
+
+--new tab (turtle control)
+source devel/setup.sh
+rosrun turtlebot3_teleop turtlebot3_teleop_key
