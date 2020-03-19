@@ -23,7 +23,7 @@
         <pose frame=''>0 0 0 0 -0 0</pose>
         <geometry>
           <mesh>
-            <uri>/home/i/study/adaptiveRobotics/navigationCase/maze_01.dae</uri>
+            <uri>/home/ros/catkin_ws/srs/turtlebot3_simulations/turtlebot3_gazebo/maze_01.dae</uri>
             <scale>1 1 1</scale>
           </mesh>
         </geometry>
@@ -36,7 +36,7 @@
         <pose frame=''>0 0 0 0 -0 0</pose>
         <geometry>
           <mesh>
-            <uri>/home/i/study/adaptiveRobotics/navigationCase/maze_01.dae</uri>
+            <uri>/home/ros/catkin_ws/srs/turtlebot3_simulations/turtlebot3_gazebo/maze_01.dae</uri>
             <scale>1 1 1</scale>
           </mesh>
         </geometry>
