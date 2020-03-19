@@ -38,4 +38,16 @@ roslaunch turtlebot3_slam turtlebot3_gmapping.launch
 
 roslaunch turtlebot3_navigation move_base.launch
 
+-- Now use 2D nav goal to map the house
+-- To save the map, in a new terminal window
 
+
+cd ~/catkin_ws/src/
+mkdir map
+cd map
+rosrun map_server map_saver -f mymap
+
+-- Now close all windows except gazebo, and launch RVIZ again with the map file
+
+
+roslaunch turtlebot3_navigation turtlebot3_navigation.launch map_file:=$HOME/catkin_ws/src/map/mymap.yaml
