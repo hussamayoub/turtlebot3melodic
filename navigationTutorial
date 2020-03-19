@@ -1,27 +1,41 @@
+-- Install Mapping and Path planning packages for ROS
+
 sudo apt-get install ros-melodic-hector-mapping ros-melodic-amcl ros-melodic-map-server ros-melodic-move-base  ros-melodic-rosserial-python ros-melodic-hls-lfcd-lds-driver ros-melodic-serial ros-melodic-dwa-local-planner
+
+-- Open your catkin workspace
 
 cd ~/catkin_ws/
 
+-- Download the turtlebot simulation files
+
 git clone https://github.com/hussamayoub/turtlebot3melodic.git
 
+-- Copy the Turtlebot files, and remove the downloaded directory
+
 cp -r turtlebot3melodic/* src/
+rm -rf turtlebot3melodic/
+
+-- Build your catkin workspace
 
 catkin_make
 
--- (gazebo)
-source devel/setup.sh
-export TURTLEBOT3_MODEL=waffle
+echo "source devel/setup.sh" >> ~/.bashrc
+echo "export TURTLEBOT3_MODEL=waffle" >> ~/.bashrc
+
+-- In an new terminal tab, launch Gazebo
+
 roslaunch turtlebot3_gazebo turtlebot3_house.launch
 
---new tab (rviz visualization)
-source devel/setup.sh
-export TURTLEBOT3_MODEL=waffle
+-- In an new terminal tab, launch RVIZ
+
 roslaunch turtlebot3_gazebo turtlebot3_gazebo_rviz.launch
 
---new tab (mapping)
-source devel/setup.sh
+-- In an new terminal tab, launch Gmapping
+
 roslaunch turtlebot3_slam turtlebot3_gmapping.launch
 
---new tab (turtle control)
-source devel/setup.sh
-rosrun turtlebot3_teleop turtlebot3_teleop_key
+-- In an new terminal tab, launch navigation
+
+roslaunch turtlebot3_navigation move_base.launch
+
+
