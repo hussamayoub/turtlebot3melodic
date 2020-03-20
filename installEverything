@@ -11,17 +11,17 @@
 	cp -r turtlebot3melodic/turtle* src/
 	rm -rf turtlebot3melodic/
 #build the catkin workspace
+	source /opt/ros/melodic/setup.bash
 	catkin_make
 #source again, and export ROS settings
-	source ~/turtlekin_ws/devel/setup.sh
-	source /opt/ros/melodic/setup.bash
-	export TURTLEBOT3_MODEL=waffle
 	export ROS_MASTER_URI='http://localhost:11311'
 	export ROS_IP=0.0.0.0
 #add proper sourcing to bashrc
-	echo "source ~/turtlekin_ws/devel/setup.sh" >> ~/.bashrc
 	echo "source /opt/ros/melodic/setup.bash" >> ~/.bashrc
+	echo "source ~/turtlekin_ws/devel/setup.sh" >> ~/.bashrc
 	echo "export TURTLEBOT3_MODEL=waffle" >> ~/.bashrc
 #Launch the maze
-
+	source /opt/ros/melodic/setup.bash
+	export TURTLEBOT3_MODEL=waffle
+	source ~/turtlekin_ws/devel/setup.sh
 	roslaunch turtlebot3_gazebo turtlebot3_maze.launch
