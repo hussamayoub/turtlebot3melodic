@@ -13,7 +13,6 @@
 #build the catkin workspace
 	catkin_make
 #source again, and export ROS settings
-	source ~/.bashrc
 	source ~/turtlekin_ws/devel/setup.sh
 	source /opt/ros/melodic/setup.bash
 	export TURTLEBOT3_MODEL=waffle
