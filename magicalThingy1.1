@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 #Install Planning, mapping and navigation dependencies
-	sudo apt-get install ros-melodic-hector-mapping ros-melodic-amcl ros-melodic-map-server ros-melodic-move-base  ros-melodic-rosserial-python ros-melodic-hls-lfcd-lds-driver ros-melodic-serial ros-melodic-dwa-local-planner
+	sudo apt-get update	
+	sudo apt-get install ros-melodic-hector-mapping ros-melodic-amcl ros-melodic-map-server ros-melodic-move-base  ros-melodic-rosserial-python ros-melodic-hls-lfcd-lds-driver ros-melodic-serial ros-melodic-dwa-local-planner ros-melodic-gmapping
 #make a catkin workspace, and build it
 	cd ~ 
 	mkdir turtlekin_ws
